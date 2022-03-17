@@ -1,0 +1,117 @@
+/*custom variables*/
+:root {
+    --ff-sans: 'Smooch Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    gap: 0;
+    height: 100vh;
+    font-family: var(--ff-sans);
+    background-color: #9dcdc0;
+}
+
+/*sound button*/
+#soundOff {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    background-image: url(./images/sound-on.svg);
+    background-color: transparent;
+    border: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+#soundOff[sound-off="true"] {
+    background-image: url(./images/sound-off.svg);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    align-self: center;
+    margin-bottom: rem;
+    font-size: 3.5rem;
+    word-spacing: 0.9rem;
+}
+
+
+
+h3 {
+    align-self: flex-start;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    word-spacing: 0.3rem;
+    
+
+}
+
+img {
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    place-items: center;
+    border-radius: 5px;
+    width: 450px;
+    height: 340px;
+    background-color: beige;
+    padding: 10px;
+}
+
+
+#newGame {
+    display: block;
+    align-self: center;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 1.3rem;
+    padding: 0.1rem 0.4rem;
+    width: auto;
+    font-family: var(--ff-sans);
+    font-size: 1.2rem;
+    font-weight: 600;
+    word-spacing: 0.2rem;
+    background-color: #fff983;
+    border: 10px solid beige;
+    border-radius: 5px;
+}
+
+
+@media (max-width: 35em) {
+    #grid {
+        grid-template-columns: repeat(3, 1fr);
+        width: 340px;
+        height: 460px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        margin-top: 0.3rem;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+    }
+}
