@@ -1,6 +1,11 @@
 /*custom variables*/
 :root {
     --ff-sans: 'Smooch Sans', sans-serif;
+
+    --color-light: beige;
+    --color-mid: #fff983;
+    --color-dark: #9dcdc0;
+    --color-congrats: red;
 }
 
 * {
@@ -17,7 +22,7 @@ body {
     gap: 0;
     height: 100vh;
     font-family: var(--ff-sans);
-    background-color: #9dcdc0;
+    background-color: var(--color-dark);
 }
 
 /*sound button*/
@@ -46,7 +51,6 @@ main {
 
 h1 {
     align-self: center;
-    margin-bottom: rem;
     font-size: 3.5rem;
     word-spacing: 0.9rem;
 }
@@ -61,7 +65,7 @@ h3 {
 #congratulations {
     align-self: center;
     margin-bottom: 1rem;
-    color: red;
+    color: var(--color-congrats);
     font-size: 1.5rem;
     font-weight: 700;
     word-spacing: 0.3rem;
@@ -70,13 +74,13 @@ h3 {
 #grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
     place-items: center;
-    border-radius: 5px;
+    gap: 10px;
     width: 450px;
     height: 340px;
-    background-color: beige;
     padding: 10px;
+    background-color: var(--color-light);
+    border-radius: 5px;
     transform: scale(1);
 }
 
@@ -95,23 +99,23 @@ img:active {
     align-self: center;
     text-align: center;
     margin-top: 1.3rem;
+    background-color: var(--color-light); 
+    border: solid 10px var(--color-light);
     border-radius: 5px;
-    border: solid 10px beige;
-    background-color: beige;
     transform: scale(1);
 }
 
 #newGame {
-    cursor: pointer;
-    padding: 0.1rem 0.4rem;
     width: auto;
+    padding: 0.1rem 0.4rem;
     font-family: var(--ff-sans);
     font-size: 1.2rem;
     font-weight: 600;
     word-spacing: 0.2rem;
-    background-color: #fff983;
-    border: 5px solid #fff983;
+    background-color: var(--color-mid);
+    border: 5px solid var(--color-mid);
     border-radius: 5px;
+    cursor: pointer;
 }
 
 #newGame:active {

@@ -81,10 +81,10 @@ function playMemoryGame() {
 
     // creating grid
     const gridDisplay = document.querySelector('#grid');
-    var resultDisplay = document.querySelector('#result');
-    var cardsChosen = [];
-    var cardsChosenId = [];
-    var cardsWon = [];
+    const resultDisplay = document.querySelector('#result');
+    let cardsChosen = [];
+    let cardsChosenId = [];
+    let cardsWon = [];
     let lockboard = false;
 
     function createBoard () {
@@ -153,24 +153,26 @@ playMemoryGame();
 
 const newGameButton = document.getElementById('newGame');
 newGameButton.addEventListener('click', playNewGame);
+
 function playNewGame() {
+    // reset
     cardsChosen = [];
     cardsChosenId = [];
     cardsWon = [];
-
+    // display result again
     const scoreToShow = document.querySelector('h3');
     scoreToShow.hidden = false;
-    let resultDisplayReset = document.querySelector('#result');
+    const resultDisplayReset = document.querySelector('#result');
     resultDisplayReset.textContent = cardsWon.length; 
-
+    // hide congratulations
     const congratsToHide = document.getElementById('congratulations');
     congratsToHide.hidden = true;
+    // remove grid
     const cardsToRemove = document.querySelectorAll('img');
     const gridToClear = document.getElementById('grid')
     cardsToRemove.forEach(card => {
         gridToClear.removeChild(card);
     });
-
 
     playMemoryGame();
 };
