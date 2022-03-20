@@ -62,11 +62,6 @@ h3 {
 
 }
 
-img {
-    width: 100%;
-    aspect-ratio: 1;
-}
-
 #grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -77,15 +72,32 @@ img {
     height: 340px;
     background-color: beige;
     padding: 10px;
+    transform: scale(1);
 }
 
+img {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 5px;
+}
 
-#newGame {
-    display: block;
+img:active {
+    transform: scale(0.95);
+    transition: transform 0.2s;
+}
+
+.wrapper {
     align-self: center;
     text-align: center;
-    cursor: pointer;
     margin-top: 1.3rem;
+    border-radius: 5px;
+    border: solid 10px beige;
+    background-color: beige;
+    transform: scale(1);
+}
+
+#newGame {
+    cursor: pointer;
     padding: 0.1rem 0.4rem;
     width: auto;
     font-family: var(--ff-sans);
@@ -93,8 +105,13 @@ img {
     font-weight: 600;
     word-spacing: 0.2rem;
     background-color: #fff983;
-    border: 10px solid beige;
+    border: 5px solid #fff983;
     border-radius: 5px;
+}
+
+#newGame:active {
+    transform: scale(0.955);
+    transition: transform 0.2s;
 }
 
 

@@ -85,6 +85,7 @@ function playMemoryGame() {
     let cardsChosen = [];
     let cardsChosenId = [];
     const cardsWon = [];
+    let lockboard = false;
 
     function createBoard () {
         cardArray.forEach(item => {
@@ -120,6 +121,7 @@ function playMemoryGame() {
             cards[optionOneId].setAttribute('src', './images/cover.png');
             cards[optionTwoId].setAttribute('src', './images/cover.png');
         }
+        lockboard = false;
 
         cardsChosen = [];
         cardsChosenId = [];
@@ -132,12 +134,16 @@ function playMemoryGame() {
     }
 
     function flipCard() {
+        // don't flip another card before previous pair is finished
+        if(lockboard) return;
         const cardId = this.getAttribute('data-id');
         cardsChosen.push(cardArray[cardId].name);
         cardsChosenId.push(cardId);
         this.setAttribute('src', cardArray[cardId].img);
         if (cardsChosen.length === 2) {
-            setTimeout(checkMatch, 600);
+            lockboard = true;
+            setTimeout(checkMatch, 800);
+            
         }
     }
 }
