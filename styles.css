@@ -51,15 +51,20 @@ h1 {
     word-spacing: 0.9rem;
 }
 
-
-
 h3 {
     align-self: flex-start;
     margin-bottom: 1rem;
     font-size: 1.5rem;
     word-spacing: 0.3rem;
-    
+}
 
+#congratulations {
+    align-self: center;
+    margin-bottom: 1rem;
+    color: red;
+    font-size: 1.5rem;
+    font-weight: 700;
+    word-spacing: 0.3rem;
 }
 
 #grid {

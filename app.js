@@ -81,10 +81,10 @@ function playMemoryGame() {
 
     // creating grid
     const gridDisplay = document.querySelector('#grid');
-    const resultDisplay = document.querySelector('#result');
-    let cardsChosen = [];
-    let cardsChosenId = [];
-    const cardsWon = [];
+    var resultDisplay = document.querySelector('#result');
+    var cardsChosen = [];
+    var cardsChosenId = [];
+    var cardsWon = [];
     let lockboard = false;
 
     function createBoard () {
@@ -129,7 +129,10 @@ function playMemoryGame() {
 
         if(cardsWon.length == cardArray.length/2) {
             gameWon.play();
-            resultDisplay.innerHTML = ' Congratulations! You found them all!'
+            const scoreToHide = document.querySelector('h3');
+            scoreToHide.hidden = true;
+            const congratsToShow = document.getElementById('congratulations');
+            congratsToShow.hidden = false;
         }
     }
 
@@ -143,7 +146,6 @@ function playMemoryGame() {
         if (cardsChosen.length === 2) {
             lockboard = true;
             setTimeout(checkMatch, 800);
-            
         }
     }
 }
@@ -151,13 +153,25 @@ playMemoryGame();
 
 const newGameButton = document.getElementById('newGame');
 newGameButton.addEventListener('click', playNewGame);
-
 function playNewGame() {
+    cardsChosen = [];
+    cardsChosenId = [];
+    cardsWon = [];
+
+    const scoreToShow = document.querySelector('h3');
+    scoreToShow.hidden = false;
+    let resultDisplayReset = document.querySelector('#result');
+    resultDisplayReset.textContent = cardsWon.length; 
+
+    const congratsToHide = document.getElementById('congratulations');
+    congratsToHide.hidden = true;
     const cardsToRemove = document.querySelectorAll('img');
     const gridToClear = document.getElementById('grid')
     cardsToRemove.forEach(card => {
         gridToClear.removeChild(card);
     });
+
+
     playMemoryGame();
 };
 
